@@ -1,0 +1,35 @@
+{
+  "name": "gulp-watchify",
+  "version": "0.1.0",
+  "description": "integrates watchify with gulp.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcello3d/gulp-watchify.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "browserify",
+    "watchify",
+    "gulp",
+    "watch"
+  ],
+  "author": "Marcello Bastéa-Forte",
+  "license": "zlib",
+  "bugs": {
+    "url": "https://github.com/marcello3d/gulp-watchify/issues"
+  },
+  "homepage": "https://github.com/marcello3d/gulp-watchify",
+  "dependencies": {
+    "gulp-util": "^2.2.14",
+    "deepmerge": "^0.2.7",
+    "through2": "^0.4.1"
+  },
+  "peerDependencies": {
+    "watchify": "^0.6.1"
+  }
+
+}
