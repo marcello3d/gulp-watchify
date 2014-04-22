@@ -10,7 +10,6 @@ module.exports = function(taskCallback) {
     function getBundle(file, opt) {
         var path = file.path
         if (cache[path]) {
-            console.log("cache hit")
             return cache[path]
         }
         var bundle
