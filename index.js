@@ -24,6 +24,9 @@ module.exports = function(taskCallback) {
             bundle = watchify.browserify(opt)
         }
         bundle.updateStatus = 'first'
+        if (opt.setup) {
+            opt.setup(bundle)
+        }
 
         return bundle
     }
