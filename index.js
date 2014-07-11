@@ -14,12 +14,16 @@ module.exports = function(taskCallback) {
         }
         var bundle
         if (opt.watch !== false) {
-            bundle = watchify(opt)
-            cache[path] = bundle
+            bundle = watchify(opt);
+            cache[path] = bundle;
             bundle.on('update', function() {
                 bundle.updateStatus = 'updated'
                 taskCallback(plugin)
-            })
+            });
+            bundle.on('error', function(err) {
+                gutil.log(err);
+                throw err;
+            });
         } else {
             bundle = watchify.browserify(opt)
         }
@@ -50,6 +54,9 @@ module.exports = function(taskCallback) {
                 file = file.clone()
                 delete bundle.updateStatus
                 file.contents = bundle.bundle(opt)
+                file.contents.on('error', function(err) {
+                    gutil.log(err);
+                });
                 // Wait until done or else streamify(uglify()) fails due to buffering
                 file.contents.on('end', callback)
                 this.push(file)
