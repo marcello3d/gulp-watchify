@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/marcello3d/gulp-watchify",
   "dependencies": {
-    "gulp-util": "^2.2.14",
     "deepmerge": "^0.2.7",
+    "gulp-util": "^3.0.0",
     "through2": "^0.4.1"
   },
   "peerDependencies": {

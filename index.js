@@ -3,6 +3,8 @@ var merge = require('deepmerge');
 var through = require('through2');
 var watchify = require('watchify');
 
+var PLUGIN_NAME = 'watchify';
+
 var cache = {};
 
 module.exports = function(taskCallback) {
@@ -21,7 +23,7 @@ module.exports = function(taskCallback) {
                 taskCallback(plugin);
             });
             bundle.on('error', function(err) {
-                gutil.log(err);
+                gutil.log(new gutil.PluginError(PLUGIN_NAME, err));
                 throw err;
             });
         } else {
@@ -55,7 +57,7 @@ module.exports = function(taskCallback) {
                 delete bundle.updateStatus;
                 file.contents = bundle.bundle(opt);
                 file.contents.on('error', function(err) {
-                    gutil.log(err);
+                    gutil.log(new gutil.PluginError(PLUGIN_NAME, err).toString());
                 });
                 // Wait until done or else streamify(uglify()) fails due to buffering
                 file.contents.on('end', callback);
