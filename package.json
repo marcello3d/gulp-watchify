@@ -4,7 +4,7 @@
   "description": "integrates watchify with gulp.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,18 @@
   "dependencies": {
     "gulp-util": "^2.2.14",
     "deepmerge": "^0.2.7",
-    "through2": "^0.4.1"
+    "through2": "~0.4.2"
   },
   "peerDependencies": {
-    "watchify": "^0.6.1"
+    "watchify": "~0.10.2"
+  },
+  "devDependencies": {
+    "brfs": "~1.1.2",
+    "exec-sync": "^0.1.6",
+    "gulp": "~3.8.6",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "~0.3.1",
+    "gulp-util": "~2.2.20",
+    "watchify": "~0.10.2"
   }
-
 }
