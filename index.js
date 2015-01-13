@@ -1,6 +1,7 @@
 var gutil = require('gulp-util')
 var merge = require('deepmerge')
 var through = require('through2')
+var browserify = require('browserify')
 var watchify = require('watchify')
 
 var cache = {}
@@ -12,16 +13,14 @@ module.exports = function(taskCallback) {
         if (cache[path]) {
             return cache[path]
         }
-        var bundle
+        var bundle = browserify(opt)
         if (opt.watch !== false) {
-            bundle = watchify(opt)
+            watchify(bundle, opt) // modifies bundle to emit update events
             cache[path] = bundle
             bundle.on('update', function() {
                 bundle.updateStatus = 'updated'
                 taskCallback(plugin)
             })
-        } else {
-            bundle = watchify.browserify(opt)
         }
         bundle.updateStatus = 'first'
         if (opt.setup) {
@@ -49,7 +48,7 @@ module.exports = function(taskCallback) {
                 )
                 file = file.clone()
                 delete bundle.updateStatus
-                file.contents = bundle.bundle(opt)
+                file.contents = bundle.bundle()
                 // Wait until done or else streamify(uglify()) fails due to buffering
                 file.contents.on('end', callback)
                 this.push(file)
