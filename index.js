@@ -13,6 +13,9 @@ module.exports = function(taskCallback) {
         if (cache[path]) {
             return cache[path]
         }
+        if (opt.watch !== false) {
+            opt = merge(opt, watchify.args)
+        }
         var bundle = browserify(opt)
         if (opt.watch !== false) {
             watchify(bundle, opt) // modifies bundle to emit update events
