@@ -18,7 +18,7 @@ module.exports = function(taskCallback) {
         }
         var bundle = browserify(opt)
         if (opt.watch !== false) {
-            watchify(bundle, opt) // modifies bundle to emit update events
+            bundle = watchify(bundle, opt) // modifies bundle to emit update events
             cache[path] = bundle
             bundle.on('update', function() {
                 bundle.updateStatus = 'updated'
