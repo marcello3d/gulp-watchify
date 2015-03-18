@@ -1,6 +1,6 @@
 {
   "name": "gulp-watchify",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "integrates watchify with gulp.js",
   "main": "index.js",
   "scripts": {
