@@ -1,3 +1,7 @@
+# UNRELEASED
+
+  * update to watchify 3.1.0 and browserify 9.0.7
+
 # 0.4.0 (2015-03-18)
 
   * enable browserify cache (thanks Kazuhito Hokamura)
