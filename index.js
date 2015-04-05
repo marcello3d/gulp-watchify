@@ -53,6 +53,7 @@ module.exports = function(taskCallback) {
                 delete bundle.updateStatus
                 file.contents = bundle.bundle()
                 // Wait until done or else streamify(uglify()) fails due to buffering
+                file.contents.on('error', callback)
                 file.contents.on('end', callback)
                 this.push(file)
             } else {
