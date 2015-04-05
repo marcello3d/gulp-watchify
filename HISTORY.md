@@ -1,4 +1,4 @@
-# UNRELEASED
+# 0.5.0 (2015-04-04)
 
   * update to watchify 3.1.0 and browserify 9.0.7
   * add bundle error handler
