@@ -29,12 +29,12 @@
     "through2": "^0.6.3"
   },
   "peerDependencies": {
-    "browserify": "^9.0.7",
+    "browserify": "^11.0.0",
     "watchify": "^3.1.0"
   },
   "devDependencies": {
     "brfs": "^1.4.0",
-    "browserify": "^9.0.7",
+    "browserify": "^11.0.0",
     "gulp": "^3.8.11",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.1.0",
