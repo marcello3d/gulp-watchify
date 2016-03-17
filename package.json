@@ -26,17 +26,17 @@
   "dependencies": {
     "deepmerge": "^0.2.7",
     "gulp-util": "^3.0.4",
-    "through2": "^0.6.3"
+    "through2": "^2.0.1"
   },
   "peerDependencies": {
-    "browserify": "^11.0.0",
+    "browserify": "^13.0.0",
     "watchify": "^3.1.0"
   },
   "devDependencies": {
     "brfs": "^1.4.0",
-    "browserify": "^11.0.0",
+    "browserify": "^13.0.0",
     "gulp": "^3.8.11",
-    "gulp-streamify": "0.0.5",
+    "gulp-streamify": "1.0.2",
     "gulp-uglify": "^1.1.0",
     "watchify": "^3.1.0"
   }
