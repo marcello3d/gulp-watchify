@@ -1,3 +1,7 @@
+# 0.6.0 (2016-04-08)
+
+  * update browserify ^13.0.0
+
 # 0.5.0 (2015-04-04)
 
   * update to watchify 3.1.0 and browserify 9.0.7
