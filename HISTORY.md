@@ -1,3 +1,7 @@
+# 0.7.0 (2017-04-10)
+
+  * update browserify ^14.1.0
+
 # 0.6.0 (2016-04-08)
 
   * update browserify ^13.0.0
@@ -24,4 +28,3 @@
 # v0.1.0
 
   * initial release
-
